@@ -142,14 +142,13 @@ h1 {
   font-family: Prata-Regular;
   font-size: 2.8rem;
   line-height: 1.3em;
-  color: #fff;
   text-transform: uppercase;
   letter-spacing: .08rem;
 }
 
 p {
   line-height: 1.375em!important;
-  margin: initial!important;
+  margin: 0!important;
 }
 
 img {
@@ -1945,6 +1944,18 @@ a:hover {
     margin-top: 0;
   }
 }
+.thanks {
+  min-height: 100vh;
+  text-align: center;
+  align-content: center;
+}
+
+@media (min-width:992px) {
+  .thanks {
+    height: 100vh;
+    justify-content: center;
+  }
+}
 .ymap {
   height: 100%;
 }
@@ -2713,15 +2724,6 @@ a:hover {
 .header__logo-img {
   height: 100%;
 }
-.header__nav {
-  display: none;
-}
-
-@media (min-width:768px) {
-  .header__nav {
-    display: block;
-  }
-}
 .header__phone {
   display: none;
 }
@@ -2730,6 +2732,15 @@ a:hover {
   .header__phone {
     display: block;
     font-size: 2.6rem;
+  }
+}
+.header__nav {
+  display: none;
+}
+
+@media (min-width:768px) {
+  .header__nav {
+    display: block;
   }
 }
 .header__socials {
@@ -2814,10 +2825,6 @@ a:hover {
   .nav-mobile__menu {
     display: none;
   }
-}
-.nav-services__category {
-  color: #354a0a;
-  font-size: 2rem;
 }
 .nav-services__category-icon {
   font-size: 1.3em;
@@ -2916,11 +2923,18 @@ a:hover {
     margin-top: 0;
   }
 }
-.nav-services__subcategory {
-  font-family: RobotoSlab-Light;
-  font-size: 1.8rem;
-  padding-left: 36px;
-  justify-self: start;
+.nav-services__category {
+  color: #354a0a;
+  font-size: 2rem;
+}
+.primary-screen_height_full-screen {
+  height: 100vh;
+}
+
+@media (min-width:768px) {
+  .primary-screen_height_full-screen {
+    height: 100vh;
+  }
 }
 .popular-programs__body {
   overflow-x: hidden;
@@ -3027,14 +3041,11 @@ a:hover {
     }
 }
 }
-.primary-screen_height_full-screen {
-  height: 100vh;
-}
-
-@media (min-width:768px) {
-  .primary-screen_height_full-screen {
-    height: 100vh;
-  }
+.nav-services__subcategory {
+  font-family: RobotoSlab-Light;
+  font-size: 1.8rem;
+  padding-left: 36px;
+  justify-self: start;
 }
 .primary-screen_page_home {
   background-image: url(/public/img/backgrounds/home_primary-screen.jpg);
@@ -3143,15 +3154,6 @@ a:hover {
     background: radial-gradient(circle,rgba(0,0,0,.5) 0,rgba(255,255,255,0) 100%);
   }
 }
-.program-card_sliding {
-  margin: 0 5px;
-}
-
-@media (min-width:768px) {
-  .program-card_sliding {
-    margin: 0;
-  }
-}
 .program-card__body {
   padding: 15px 15px 0;
   display: flex;
@@ -3182,6 +3184,15 @@ a:hover {
 
   .program-card__body>* {
     margin-top: 0;
+  }
+}
+.program-card_sliding {
+  margin: 0 5px;
+}
+
+@media (min-width:768px) {
+  .program-card_sliding {
+    margin: 0;
   }
 }
 .program-card__btn {
@@ -3233,6 +3244,7 @@ a:hover {
   flex-grow: 1;
   text-align: right;
 }
+
 .program-card__price-list-item {
   display: flex;
   flex-direction: row;
@@ -3270,7 +3282,6 @@ a:hover {
     padding: 15px;
   }
 }
-
 .program-card__text {
   text-indent: .8rem;
   padding-bottom: 15px;
@@ -3348,6 +3359,9 @@ a:hover {
     }
 }
 }
+.promo-card__btn {
+  transform: translateZ(20px);
+}
 .promo-card__content {
   display: flex;
   flex-direction: column;
@@ -3420,9 +3434,6 @@ a:hover {
       margin-top: 0;
     }
 }
-}
-.promo-card__btn {
-  transform: translateZ(20px);
 }
 .promo-card__cover {
   position: absolute;
@@ -3707,6 +3718,13 @@ a:hover {
   text-align: center;
   box-sizing: border-box;
 }
+.testimonial-card__video {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.testimonial-card__video-src {
+  width: 330px;
+}
 @media (min-width:768px) {
   .testimonial-add__form {
     width: 80%;
@@ -3718,13 +3736,6 @@ a:hover {
   .testimonial-add__form {
     width: 65%;
   }
-}
-.testimonial-card__video {
-  border-radius: 10px;
-  overflow: hidden;
-}
-.testimonial-card__video-src {
-  width: 330px;
 }
 
 
@@ -3807,6 +3818,37 @@ a:hover {
   .text_size_xl {
     font-size: 2.4rem;
     line-height: 2.5rem;
+  }
+}
+.thanks__text {
+  display: flex;
+  flex-direction: column;
+}
+
+@supports (display:grid) {
+  .thanks__text {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+  }
+}
+
+.thanks__text>* {
+  margin-top: 10px;
+}
+
+.thanks__text>:nth-child(-n+1) {
+  margin-top: 0;
+}
+
+@supports (display:grid) {
+  .thanks__text {
+    grid-row-gap: 10px;
+  }
+
+  .thanks__text>* {
+    margin-top: 0;
   }
 }
 @media (min-width:768px) {

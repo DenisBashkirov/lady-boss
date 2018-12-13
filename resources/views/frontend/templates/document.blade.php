@@ -22,14 +22,11 @@
 
 <body>
 
-@include('frontend.layouts.nav-mobile')
-@include('frontend.layouts.header')
-
-@yield('page_content')
-
-@include('frontend.layouts.footer')
+@yield('template')
 
 @include('frontend.layouts.scripts')
+
+@yield('module_booking')
 
 </body>
 </html>

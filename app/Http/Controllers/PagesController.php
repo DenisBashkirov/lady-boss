@@ -102,7 +102,7 @@ class PagesController extends BaseController
         {
             case 'testimonial':
                 $input = $request->except('thanks_for');
-                Testimonial::create($input);
+                //Testimonial::create($input);
         }
 
         $this->template = 'frontend.pages.thanks';

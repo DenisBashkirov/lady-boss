@@ -1,4 +1,4 @@
-@extends('frontend.layouts.main')
+@extends('frontend.templates.main')
 
 @section('page_content')
 
