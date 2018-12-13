@@ -30,7 +30,7 @@ class PagesController extends BaseController
         $testimonials = Testimonial::latest()->take(3)->get();
         $this->vars = array_add($this->vars, 'testimonials', $testimonials);
 
-        $this->page_title = 'Главная';
+        $this->page_title = 'Салон красоты, спа и массажа Lady boss | Главная';
 
         return $this->renderOutput();
     }
@@ -38,7 +38,7 @@ class PagesController extends BaseController
 
     public function categories()
     {
-        $this->page_title = 'Все услуги';
+        $this->page_title = 'Салон красоты, спа и массажа Lady boss | Все услуги';
 
         return $this->renderOutput();
     }
@@ -49,7 +49,7 @@ class PagesController extends BaseController
         $category = Category::where('slug', $slug)->first();
         $this->vars = array_add($this->vars, 'category', $category);
 
-        $this->page_title = $category->name;
+        $this->page_title = $category->name . '| Салон красоты, спа и массажа Lady boss';
 
         return $this->renderOutput();
     }
@@ -60,7 +60,7 @@ class PagesController extends BaseController
         $subcategory = Subcategory::where('slug', $subcategory_slug)->first();
         $this->vars = array_add($this->vars, 'subcategory', $subcategory);
 
-        $this->page_title = $subcategory->name;
+        $this->page_title = $subcategory->name . '| Салон красоты, спа и массажа Lady boss';
 
         return $this->renderOutput();
     }
@@ -68,7 +68,7 @@ class PagesController extends BaseController
 
     public function certificates()
     {
-        $this->page_title = 'Подарочные сертификаты';
+        $this->page_title = 'Подарочные сертификаты в салон красоты, спа и массажа';
 
         return $this->renderOutput();
     }
@@ -79,7 +79,7 @@ class PagesController extends BaseController
         $gallery = GalleryItem::all();
         $this->vars = array_add($this->vars, 'gallery', $gallery);
 
-        $this->page_title = 'Галерея';
+        $this->page_title = 'Салон красоты, спа и массажа Lady boss | Галерея';
 
         return $this->renderOutput();
     }
@@ -90,7 +90,7 @@ class PagesController extends BaseController
         $testimonials = Testimonial::latest()->get();
         $this->vars = array_add($this->vars, 'testimonials', $testimonials);
 
-        $this->page_title = 'Отзывы';
+        $this->page_title = 'Салон красоты, спа и массажа Lady boss | Отзывы';
 
         return $this->renderOutput();
     }
