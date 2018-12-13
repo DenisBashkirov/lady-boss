@@ -1,0 +1,14 @@
+@import "../../../bootstrap"
+
+.socials-section__container
+  padding: 25px 15px
+  border-radius: 20px
+  box-shadow: 0 0 4px rgba(#000,.3)
+  align-items: center
+
+  @media ($brpt_xs)
+    @include col-generate-auto(15px)
+
+  @media ($brpt_md)
+    @include row-generate(2, 30px, auto auto)
+    justify-content: space-around

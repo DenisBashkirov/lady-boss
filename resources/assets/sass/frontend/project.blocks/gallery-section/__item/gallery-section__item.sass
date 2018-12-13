@@ -1,0 +1,22 @@
+@import "../../../bootstrap"
+
+.gallery-section__item
+  transition: all $duration_normal
+  position: relative
+
+  &:after
+    content: ''
+    @include overlay
+    z-index: 2
+    background-color: rgba(#000,.5)
+    transition: all $duration_normal
+
+  @media ($brpt_md)
+    &:after
+      display: none
+
+
+.gallery-section__item.slick-center
+
+  &:after
+    background: rgba(#000, .0)

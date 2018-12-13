@@ -1,0 +1,15 @@
+@import "../../../bootstrap"
+
+.promo-card__content
+  @include col-generate-auto(15px)
+  position: relative
+  z-index: 1
+  text-align: center
+  transform-style: preserve-3d
+
+  @media ($brpt_md)
+    @include col-generate-auto(30px)
+    width: 50%
+    float: right
+    padding: 15px
+    box-sizing: border-box

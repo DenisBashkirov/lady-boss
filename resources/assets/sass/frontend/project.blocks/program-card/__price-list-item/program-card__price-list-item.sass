@@ -1,0 +1,13 @@
+@import "../../../bootstrap"
+
+.program-card__price-list-item
+  @include row-generate-auto(1fr auto)
+  align-items: center
+  border-top: $line
+  padding: 10px 0
+
+  &:last-child
+    padding-top: 10px
+
+  @media ($brpt_md)
+    padding: 15px

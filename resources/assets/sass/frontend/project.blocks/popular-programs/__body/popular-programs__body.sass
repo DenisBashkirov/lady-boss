@@ -1,0 +1,10 @@
+@import "../../../bootstrap"
+
+.popular-programs__body
+  overflow-x: hidden
+
+  @media ($brpt_xs)
+    @include row-generate(1, 30px, 1fr, 15px)
+
+  @media ($brpt_lg)
+    @include row-generate(3)

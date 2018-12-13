@@ -1,0 +1,17 @@
+@import "../../../bootstrap"
+
+.certificate__header
+  position: relative
+  
+  @media ($brpt_md)
+    text-align: left
+
+  @media ($brpt_xl)
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      width: 123px
+      height: 2px
+      background-color: #fff
+      bottom: -70px

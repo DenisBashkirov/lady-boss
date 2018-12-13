@@ -1,0 +1,11 @@
+@import "../../../bootstrap"
+
+.benefits__item
+
+  @media ($brpt_xs)
+    @include row-generate(2, 15px, auto 1fr, 0, nowrap)
+    align-items: center
+
+  @media ($brpt_md)
+    @include col-generate(2, column, 20px)
+    text-align: center

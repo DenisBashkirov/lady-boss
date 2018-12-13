@@ -1,0 +1,15 @@
+@import "../../../bootstrap"
+
+.nav-services__container
+  display: none
+
+  @media ($brpt_xl)
+    background: #fff
+    color: #000
+    padding: 20px
+    border-radius: 20px
+    box-sizing: border-box
+    @include row-generate(3, 30px, 1fr, 30px)
+    justify-items: start
+    align-items: flex-start
+    box-shadow: 0 0 4px rgba(0,0,0,0.1)

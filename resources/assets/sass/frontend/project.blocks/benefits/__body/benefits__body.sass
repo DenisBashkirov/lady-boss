@@ -1,0 +1,10 @@
+@import "../../../bootstrap"
+
+.benefits__body
+  align-items: start
+
+  @media ($brpt_xs)
+    @include col-generate(3, 10px)
+
+  @media ($brpt_md)
+    @include row-generate(3)

@@ -1,0 +1,15 @@
+@import "../../../bootstrap"
+
+.certificate__body
+  @include col-generate-auto(15px)
+  position: relative
+
+  @media ($brpt_md)
+    @include col-generate-auto(20px)
+    width: 80%
+    padding: 0 15px
+    box-sizing: border-box
+
+  @media ($brpt_xl)
+    @include col-generate-auto(135px)
+    width: 50%

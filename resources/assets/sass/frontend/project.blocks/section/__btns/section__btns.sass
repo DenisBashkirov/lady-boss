@@ -1,0 +1,11 @@
+@import "../../../bootstrap"
+
+.section__btns
+  justify-content: center
+  justify-items: center
+
+  @media ($brpt_xs)
+    @include col-generate-auto(10px)
+
+  @media ($brpt_md)
+    @include row-generate-auto(auto)

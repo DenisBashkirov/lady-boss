@@ -1,0 +1,10 @@
+@import "../../../bootstrap"
+
+.primary-screen__body
+  z-index: 2
+  justify-items: center
+  justify-content: center
+  @include col-generate(2, row, 15px)
+
+  @media ($brpt_lg)
+    @include col-span(5, 12)

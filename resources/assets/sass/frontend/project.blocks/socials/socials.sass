@@ -1,0 +1,10 @@
+@import "../../bootstrap"
+
+.socials
+  @include row-generate(4, 0px)
+  justify-items: center
+  justify-content: flex-start
+
+  @media ($brpt_md)
+    @include row-generate(4, 30px, 1fr, 0px, wrap, 4, inline)
+    justify-content: flex-start

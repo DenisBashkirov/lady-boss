@@ -1,0 +1,191 @@
+@import "vars"
+
+/*
+ * FONTS
+ */
+@mixin font-face($font-family, $font-name, $font-weight, $font-style: normal)
+  font-family: $font-name
+  src: url($folder_fonts + $font-family + '/' + $font-name + '.eot')
+  src: url($folder_fonts + $font-family + '/' + $font-name + '.eot?#iefix') format('embedded-opentype'), url($folder_fonts + $font-family + '/' + $font-name + '.woff') format('woff'), url($folder_fonts + $font-family + '/' + $font-name + '.ttf') format('truetype'), url($folder_fonts + $font-family + '/' + $font-name + '.svg#' + $font-name) format('svg')
+  font-weight: $font-weight
+  font-style: $font-style
+
+/*
+/* CONTAINERS
+/*
+
+@mixin container($position: initial)
+  padding-left: calc(#{$grid-column-gap} / 2)
+  padding-right: calc(#{$grid-column-gap} / 2)
+  margin: 0 auto
+  box-sizing: border-box
+  width: 100%
+
+  @media ($brpt_sm)
+    width: $sm
+
+  @media ($brpt_md)
+    width: $md
+
+  @media ($brpt_lg)
+    width: $lg
+
+  @media ($brpt_xl)
+    width: $xl
+
+  @if ($position == absolute)
+    position: absolute
+    left: 50%
+    margin-left: calc(-1 * 100% / 2)
+    @media ($brpt_sm)
+      margin-left: calc(-1 * #{$sm} / 2)
+    @media ($brpt_md)
+      margin-left: calc(-1 * #{$md} / 2)
+    @media ($brpt_lg)
+      margin-left: calc(-1 * #{$lg} / 2)
+    @media ($brpt_xl)
+      margin-left: calc(-1 * #{$xl} / 2)
+
+@mixin container-fluid()
+  width: 100%
+  box-sizing: border-box
+
+
+/*
+/* GRID
+/*
+
+@mixin row-generate($cols, $col-gap: $grid-column-gap, $template: 1fr, $row-gap: 0, $wrap: wrap, $cols_after_span: $cols, $display: block)
+
+  @if ($display == 'block')
+    display: flex
+  @else
+    display: inline-flex
+  flex-direction: row
+  flex-wrap: $wrap
+
+  @if ($cols_after_span == $cols)
+    & > *
+      margin-right: $col-gap
+      width: calc((100% - #{$col-gap} * (#{$cols} - 1)) / #{$cols})
+      box-sizing: border-box
+  @else
+    & > *
+      margin-right: $col-gap
+      box-sizing: border-box
+
+  @if ($cols_after_span)
+    & > *:nth-child(#{$cols_after_span}n)
+      margin-right: 0
+      margin-left: -1px
+  @else
+    & > *:nth-child(#{$cols}n)
+      margin-right: 0
+      margin-left: -1px
+
+  @supports (display: grid)
+    @if ($display == 'block')
+      display: grid
+    @else
+      display: inline-grid
+    @if ($template == 1fr)
+      grid-template-columns: repeat($cols, 1fr)
+    @else
+      grid-template-columns: $template
+    grid-auto-flow: row
+    grid-column-gap: $col-gap
+    & > *
+      margin-right: 0
+      width: auto
+
+  @if ($row-gap)
+    @if ($cols_after_span)
+      @include grid-row-gap($cols_after_span, $row-gap)
+    @else
+      @include grid-row-gap($cols, $row-gap)
+
+
+@mixin row-generate-auto($template, $col-gap: $grid-column-gap, $display: block)
+
+  @if ($display == 'block')
+    display: flex
+  @else
+    display: inline-flex
+  flex-direction: row
+
+  & > *
+    margin-right: $col-gap
+    //width: auto
+
+  & > *:last-child
+    margin-right: 0
+
+  @supports (display: grid)
+    @if ($display == 'block')
+      display: grid
+    @else
+      display: inline-grid
+    grid-template-columns: $template
+    //grid-auto-flow: column
+    grid-column-gap: $col-gap
+    & > *
+      margin-right: 0
+      //width: auto
+
+
+@mixin col-generate($template, $flex_direction: column, $row-gap: $grid-row-gap, $col-gap: $grid-column-gap)
+
+  display: flex
+  flex-direction: $flex_direction
+  flex-wrap: wrap
+
+  @supports (display: grid)
+    display: grid
+    grid-template-columns: 100%
+    grid-template-rows: $template
+    grid-row-gap: $row-gap
+
+  @include grid-row-gap(1, $row-gap)
+
+
+@mixin col-generate-auto($row-gap: $grid-row-gap, $template: auto)
+
+  display: flex
+  flex-direction: column
+
+  @supports (display: grid)
+    display: grid
+    grid-template-columns: 100%
+    grid-template-rows: $template
+    grid-row-gap: $row-gap
+
+  @include grid-row-gap(1, $row-gap)
+
+
+@mixin grid-row-gap($cols, $gap: $grid-row-gap)
+  & > *
+    margin-top: $gap
+  & > *:nth-child(-n+#{$cols})
+    margin-top: 0
+
+  @supports (display: grid)
+    grid-row-gap: $gap
+    & > *
+      margin-top: 0
+
+// $cols_in_row - кол-во общее кол-во колонок в ряду
+@mixin col-span($span, $cols_in_row, $col_gap: $grid-column-gap)
+  //flex-basis: calc(#{$span} / #{$cols} * 100%)
+  width: calc((100% - #{$col-gap} * (#{$cols_in_row} - 1)) / #{$cols_in_row} * #{$span} + 30px * (#{$span} - 1))
+
+  @supports (display: grid)
+    width: auto
+    grid-column: span $span
+
+
+@mixin overlay()
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0

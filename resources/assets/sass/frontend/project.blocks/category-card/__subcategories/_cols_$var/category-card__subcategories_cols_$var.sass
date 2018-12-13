@@ -1,0 +1,18 @@
+@import "../../../../bootstrap"
+
+@media ($brpt_md)
+
+  .category-card__subcategories_cols_2
+    @include row-generate(2)
+
+  .category-card__subcategories_cols_3
+    @include row-generate(3)
+
+
+.category-card__subcategories_cols_4
+
+  @media ($brpt_md)
+    @include row-generate-auto(repeat(2, 1fr))
+
+  @media ($brpt_lg)
+    @include row-generate-auto(repeat(4, 1fr))

@@ -1,0 +1,11 @@
+@import "../../bootstrap"
+
+.section
+  padding-top: 3rem
+  padding-bottom: 3rem
+  @include col-generate(auto, column, 2.5rem)
+
+  @media ($brpt_md)
+    @include grid-row-gap(6rem)
+    padding-top: 5rem
+    padding-bottom: 6rem

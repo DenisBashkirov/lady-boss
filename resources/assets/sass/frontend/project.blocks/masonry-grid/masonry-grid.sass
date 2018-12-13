@@ -1,0 +1,21 @@
+@import "../../bootstrap"
+
+.masonry-grid
+  @include col-generate-auto(30px)
+  align-self: center
+
+  @media ($brpt_md)
+    @include col-generate-auto(0)
+
+
+  & > *
+
+    @media ($brpt_md)
+      width: 354px
+      margin-bottom: 30px
+
+    @media ($brpt_lg)
+      width: 310px
+
+    @media ($brpt_xl)
+      width: 360px

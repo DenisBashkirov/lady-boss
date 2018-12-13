@@ -1,0 +1,39 @@
+@import "../vars"
+
+$img_folder: '/' + $root + '/laravel/public/img'
+
+//COLORS
+$green_base: #6bb42f
+$green_dark: #5E873C
+$green_light: #98DA61
+
+$white: #fff
+$white_dark: #f1f1f1
+
+$brown: #2c2027
+$brown_dark: #140d13
+
+@mixin gradient-dark()
+  background: rgb(51,34,34)
+  background: linear-gradient(90deg, rgba(51,34,34,1) 0%, rgba(41,27,36,1) 100%)
+
+@mixin gradient-white()
+  background: #fff
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(236,233,230,1) 100%)
+
+
+$line: 1px solid rgba(#fff,.08)
+
+//SIZES
+$btn_md_height: 46px
+
+@mixin text_xl()
+  font-size: 2.2rem
+
+  @media ($brpt_md)
+    font-size: 2.4rem
+
+// DURATIONS
+$duration_fast: 0.2s
+$duration_normal: 0.35s
+$duration_slow: 0.45s

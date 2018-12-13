@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?pahath');
+  src:  url('fonts/icomoon.eot?pahath#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?pahath') format('truetype'),
+    url('fonts/icomoon.woff?pahath') format('woff'),
+    url('fonts/icomoon.svg?pahath#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-epilyaciya:before {
+  content: "\e90b";
+}
+.icon-korrektsiya_figuri:before {
+  content: "\e90c";
+}
+.icon-kosmetologiya:before {
+  content: "\e90d";
+}
+.icon-massagi:before {
+  content: "\e90e";
+}
+.icon-nogtevoy_servis:before {
+  content: "\e90f";
+}
+.icon-parikmaherskaya:before {
+  content: "\e910";
+}
+.icon-spa_zona:before {
+  content: "\e911";
+}
+.icon-prochie:before {
+  content: "\e912";
+}
+.icon-clock:before {
+  content: "\e90a";
+}
+.icon-address:before {
+  content: "\e907";
+}
+.icon-mail:before {
+  content: "\e908";
+}
+.icon-phone:before {
+  content: "\e909";
+}
+.icon-items:before {
+  content: "\e904";
+  color: #73c62e;
+}
+.icon-programs:before {
+  content: "\e905";
+  color: #73c62e;
+}
+.icon-targets:before {
+  content: "\e906";
+  color: #73c62e;
+}
+.icon-facebook-logo:before {
+  content: "\e900";
+}
+.icon-instagram-logo:before {
+  content: "\e901";
+}
+.icon-odnoklassniki-logo:before {
+  content: "\e902";
+}
+.icon-vk-logo:before {
+  content: "\e903";
+}

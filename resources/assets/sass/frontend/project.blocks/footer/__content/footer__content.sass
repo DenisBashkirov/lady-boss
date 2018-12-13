@@ -1,0 +1,8 @@
+@import "../../../bootstrap"
+
+.footer__content
+  @include col-generate-auto(25px)
+
+  @media ($brpt_md)
+    @include col-span(5, 12)
+    @include col-generate-auto(30px)
