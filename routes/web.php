@@ -19,6 +19,12 @@ Route::get('/certificates', ['uses'=>'PagesController@certificates', 'as'=>'cert
 Route::get('/testimonials', ['uses'=>'PagesController@testimonials', 'as'=>'testimonials']);
 Route::get('/gallery', ['uses'=>'PagesController@gallery', 'as'=>'gallery']);
 
+Route::group(function () {
+    Route::prefix('thanks')->group(function () {
+        Route::get('/testimonial__added', ['uses' => 'Admin\PagesController@index', 'as' => 'thanks_testimonial_added']);
+    });
+});
+
 Route::group(['middleware' => 'auth'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('/', ['uses' => 'Admin\PagesController@index', 'as' => 'admin']);
