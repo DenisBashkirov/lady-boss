@@ -94,4 +94,21 @@ class PagesController extends BaseController
 
         return $this->renderOutput();
     }
+
+
+    public function thanks(Request $request)
+    {
+        switch ($request->input('thanks_for'))
+        {
+            case 'testimonial':
+                $input = $request->except('thanks_for');
+                Testimonial::create($input);
+        }
+
+        $this->template = 'frontend.pages.thanks';
+
+        $this->page_title = 'Салон красоты, спа и массажа Lady boss | Спасибо!';
+
+        return $this->renderOutput();
+    }
 }

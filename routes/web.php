@@ -19,6 +19,8 @@ Route::get('/certificates', ['uses'=>'PagesController@certificates', 'as'=>'cert
 Route::get('/testimonials', ['uses'=>'PagesController@testimonials', 'as'=>'testimonials']);
 Route::get('/gallery', ['uses'=>'PagesController@gallery', 'as'=>'gallery']);
 
+Route::post('/thanks/testimonial', ['uses'=>'PagesController@thanks', 'as'=>'thanks.testimonial']);
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::prefix('admin')->group(function () {
