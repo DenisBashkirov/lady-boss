@@ -87,7 +87,7 @@ class PagesController extends BaseController
 
     public function testimonials()
     {
-        $testimonials = Testimonial::latest()->get();
+        $testimonials = Testimonial::latest()->where('published', true)->get();
         $this->vars = array_add($this->vars, 'testimonials', $testimonials);
 
         $this->page_title = 'Салон красоты, спа и массажа Lady boss | Отзывы';
