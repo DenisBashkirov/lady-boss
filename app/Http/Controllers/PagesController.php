@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\GalleryItem;
+use App\Mail\TestimonialAdded;
 use App\OurContactSocials;
 use App\Subcategory;
 use App\Testimonial;
 use Illuminate\Http\Request;
 use Route;
+use Mail;
 
 class PagesController extends BaseController
 {
@@ -102,7 +104,9 @@ class PagesController extends BaseController
         {
             case 'testimonial':
                 $input = $request->except('thanks_for');
-                //Testimonial::create($input);
+                $testimonial = Testimonial::create($input);
+                //dd($testimonial);
+                Mail::to('era-digital@yandex.ru')->send(new TestimonialAdded($testimonial));
         }
 
         $this->template = 'frontend.pages.thanks';

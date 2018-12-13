@@ -21,6 +21,8 @@ Route::get('/gallery', ['uses'=>'PagesController@gallery', 'as'=>'gallery']);
 
 Route::post('/thanks/testimonial', ['uses'=>'PagesController@thanks', 'as'=>'thanks.testimonial']);
 
+Route::get('/testimonial/{id}/publish', ['uses'=>'TestimonialsController@publish', 'as'=>'testimonial.publish']);
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::prefix('admin')->group(function () {
