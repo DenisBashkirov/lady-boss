@@ -11,5 +11,6 @@
     @include('frontend.pages.home.certificate')
     @include('frontend.sections.socials-section')
     @include('frontend.sections.testimonials-section')
+    @include('frontend.components.forms.testimonial_add')
 
 @endsection

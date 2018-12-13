@@ -13,7 +13,7 @@
         </div>
 
         <div class="testimonials-section__btns section__btns">
-            <a href="#" class="btn btn_size_md btn_color_green">Все отзывы</a>
+            <a href="{{ route('testimonials') }}" class="btn btn_size_md btn_color_green">Все отзывы</a>
         </div>
 
     </section>

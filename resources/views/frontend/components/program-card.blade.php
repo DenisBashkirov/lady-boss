@@ -2,7 +2,7 @@
     <div class="program-card__cover">
         <div class="program-card__img" style="background-image: url('/public/img/programs/{{ $program->subcategory->category->slug }}/{{ $program->subcategory->slug }}/{{ $program->slug }}.jpg')"></div>
         <div class="program-card__cover-overlay overlay"></div>
-        <h2 class="program-card__title">{!! $program->name !!}</h2>
+        <h2 class="h2 program-card__title">{!! $program->name !!}</h2>
     </div>
     {{ $button }}
     <div class="program-card__body">
