@@ -105,7 +105,6 @@ class PagesController extends BaseController
             case 'testimonial':
                 $input = $request->except('thanks_for');
                 $testimonial = Testimonial::create($input);
-                //dd($testimonial);
                 Mail::to('era-digital@yandex.ru')->send(new TestimonialAdded($testimonial));
         }
 
