@@ -225,8 +225,26 @@ $(document).ready(function () {
         AOS.init();
 
     },
-        10
+        10 // добавлена задержка отработки скрипта, чтобы DOM номрально успевало сформироваться
     );
+
+
+
+    /*
+
+     */
+    var $btnShowElem = $('.js-action_elem');
+
+    $btnShowElem.on('click', function () {
+
+        var dataTarget = $(this).attr('data-target');
+        var target = $('body').find('.' + dataTarget);
+        console.log(target);
+        var effect = $(this).attr('data-effect');
+
+        target[effect]();
+
+    })
 
 
 });

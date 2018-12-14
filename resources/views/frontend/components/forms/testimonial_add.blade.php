@@ -11,7 +11,10 @@
                 <input class="form__input" type="text" name="author" placeholder="Ваше имя" required>
                 <textarea class="form__textarea" name="text" cols="30" rows="10" placeholder="Текст вашего отзыва" required></textarea>
                 <input type="hidden" name="thanks_for" value="testimonial">
-                <button class="btn btn_size_md btn_color_green">Готово</button>
+                <div class="section__btns">
+                    <button class="btn btn_size_md btn_color_green">Готово</button>
+                    <div class="btn btn_size_md btn_color_white js-action_elem" data-target="testimonial-add" data-effect="slideUp">Отмена</div>
+                </div>
             </form>
         </div>
     </div>

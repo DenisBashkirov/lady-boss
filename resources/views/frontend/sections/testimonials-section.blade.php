@@ -14,7 +14,7 @@
 
         <div class="testimonials-section__btns section__btns">
             <a href="{{ route('testimonials') }}" class="btn btn_size_md btn_color_green">Все отзывы</a>
-            <a href="{{ route('testimonials') }}" class="btn btn_size_md btn_color_white">Написать отзыв</a>
+            <div class="btn btn_size_md btn_color_white js-action_elem" data-target="testimonial-add" data-effect="slideDown">Написать отзыв</div>
         </div>
 
     </section>
