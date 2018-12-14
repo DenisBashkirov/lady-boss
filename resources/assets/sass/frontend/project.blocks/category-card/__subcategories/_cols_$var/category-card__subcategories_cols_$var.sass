@@ -12,7 +12,7 @@
 .category-card__subcategories_cols_4
 
   @media ($brpt_md)
-    @include row-generate-auto(repeat(2, 1fr))
+    @include row-generate-auto(repeat(2, 1fr), $grid-row-gap, dense)
 
   @media ($brpt_lg)
     @include row-generate-auto(repeat(4, 1fr))
