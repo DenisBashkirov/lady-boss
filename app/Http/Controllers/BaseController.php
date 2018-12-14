@@ -8,6 +8,7 @@ class BaseController extends Controller
 {
     protected $template;
     protected $vars;
+    protected $page_title;
 
     protected function  renderOutput()
     {

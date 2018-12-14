@@ -27,6 +27,7 @@
 @include('frontend.layouts.scripts')
 
 @yield('module_booking')
+@yield('ymap')
 
 </body>
 </html>

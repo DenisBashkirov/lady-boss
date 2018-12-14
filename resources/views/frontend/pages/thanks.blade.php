@@ -2,7 +2,7 @@
 
 @section('page_content')
 
-    <div class="thanks section container">
+    <div class="message-page section container">
 
         <div class="thanks__header section__header">
             <h1 class="h1">Спасибо за ваш отзыв!</h1>
