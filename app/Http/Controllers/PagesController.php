@@ -51,7 +51,7 @@ class PagesController extends BaseController
         $category = Category::where('slug', $slug)->first();
         $this->vars = array_add($this->vars, 'category', $category);
 
-        $this->page_title = $category->name . '| Салон красоты, спа и массажа Lady boss';
+        $this->page_title = $category->name . ' | Салон красоты, спа и массажа Lady boss';
 
         return $this->renderOutput();
     }
@@ -62,7 +62,7 @@ class PagesController extends BaseController
         $subcategory = Subcategory::where('slug', $subcategory_slug)->first();
         $this->vars = array_add($this->vars, 'subcategory', $subcategory);
 
-        $this->page_title = $subcategory->name . '| Салон красоты, спа и массажа Lady boss';
+        $this->page_title = $subcategory->name . ' | Салон красоты, спа и массажа Lady boss';
 
         return $this->renderOutput();
     }
@@ -100,17 +100,27 @@ class PagesController extends BaseController
 
     public function thanks(Request $request)
     {
-        switch ($request->input('thanks_for'))
+        if (!$request->input('anti-spam'))
         {
-            case 'testimonial':
-                $input = $request->except('thanks_for');
-                $testimonial = Testimonial::create($input);
-                Mail::to(['era-digital@yandex.ru', 'laura_20@mail.ru'])->send(new TestimonialAdded($testimonial));
+            switch ($request->input('thanks_for'))
+            {
+                case 'testimonial':
+                    $input = $request->except('thanks_for');
+                    $testimonial = Testimonial::create($input);
+                    Mail::to(['era-digital@yandex.ru', 'laura_20@mail.ru'])->send(new TestimonialAdded($testimonial));
+            }
+
+            $this->template = 'frontend.pages.thanks';
+
+            $this->page_title = 'Салон красоты, спа и массажа Lady boss | Спасибо!';
+
+            return $this->renderOutput();
         }
+    }
 
-        $this->template = 'frontend.pages.thanks';
-
-        $this->page_title = 'Салон красоты, спа и массажа Lady boss | Спасибо!';
+    public function payment_conditions()
+    {
+        $this->page_title .= 'Салон красоты, спа и массажа Lady boss | Условия онлайн-оплаты';
 
         return $this->renderOutput();
     }

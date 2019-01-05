@@ -1,0 +1,23 @@
+@import "../../bootstrap"
+
+.text-block
+  text-align: left
+  max-width: 800px
+  text-indent: 8px
+
+
+  & p
+    margin-top: 5px !important
+
+
+  & p:first-child
+    margin-top: 0
+
+
+
+  & ul
+    text-indent: 0
+    padding-left: 19px
+    list-style-type: circle
+    margin-top: 3px
+    @include col-generate-auto(3px)

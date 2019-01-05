@@ -9,9 +9,6 @@
                 <img src="{{ asset('img/logo/primary-screen.png') }}" alt="Lady Boss - Салон красоты, спа и массажа в Краснодре">
             </div>
             <h1 class="h1 h1_page_primary-screen">{{ $subcategory->category->name }} {{ $subcategory->name }}</h1>
-            @if ($subcategory->text)
-                <p class="primary-screen__text">{{ $subcategory->text }}</p>
-            @endif
         </div>
 
     </div>

@@ -13,6 +13,6 @@ class Program extends Model
 
     public function price_list_items()
     {
-        return $this->hasMany('App\ProgramPriceListItem');
+        return $this->hasMany('App\ProgramPriceListItem')->orderBy('ordering');
     }
 }

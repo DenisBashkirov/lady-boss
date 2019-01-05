@@ -1,0 +1,9 @@
+@import "../../bootstrap"
+
+.payment-methods
+  @include row-generate(3)
+  justify-content: center
+
+
+  @media ($brpt_md)
+    @include row-generate-auto(repeat(3, auto))

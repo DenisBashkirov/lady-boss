@@ -58,6 +58,14 @@ $(document).ready(function () {
 
 
     /*
+    ANTI-SPAM
+     */
+    var $antispam = $('.anti-spam');
+    $antispam.prop('checked', false);
+
+
+
+    /*
     STICKY HEADER
      */
     var $header = $('.header');

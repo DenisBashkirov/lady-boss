@@ -8,7 +8,7 @@ class Subcategory extends Model
 {
     public function programs()
     {
-        return $this->hasMany('App\Program', 'subcategory_id', 'id');
+        return $this->hasMany('App\Program', 'subcategory_id', 'id')->orderBy('ordering');
     }
 
     public function category()
