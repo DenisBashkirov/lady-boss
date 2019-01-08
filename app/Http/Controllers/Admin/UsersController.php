@@ -11,6 +11,14 @@ use App\Http\Middleware\CheckRights as CheckRights;
 
 class UsersController extends BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        $roles = UserRole::all();
+        $this->vars = array_add($this->vars, 'roles', $roles);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,8 +39,7 @@ class UsersController extends BaseController
      */
     public function create()
     {
-        $roles = UserRole::all();
-        $this->vars = array_add($this->vars, 'roles', $roles);
+
 
         return $this->renderOutput();
     }
@@ -74,7 +81,10 @@ class UsersController extends BaseController
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $this->vars = array_add($this->vars, 'user', $user);
+
+        return $this->renderOutput();
     }
 
     /**
@@ -86,7 +96,18 @@ class UsersController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->role_id = $request->input('role_id');
+
+        if ($request->input('password'))
+            $user->password = bcrypt($request->input('password'));
+
+        $user->save();
+
+        return redirect()->route('users.index');
     }
 
     /**

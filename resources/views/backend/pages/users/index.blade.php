@@ -15,7 +15,7 @@
                 @foreach($users as $user)
                     <tr>
                         <td class="collapsing">
-                            <i class="user icon"></i>{{ $user->name }}
+                            <a href="{{ route('users.edit', $user->id) }}"><i class="user icon"></i>{{ $user->name }}</a>
                         </td>
                         <td>
                             <i class="icon mail"></i>{{ $user->email }}
