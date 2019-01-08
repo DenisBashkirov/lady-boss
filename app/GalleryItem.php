@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class GalleryItem extends Model
 {
-    //
+    protected $guarded = [];
+    public $timestamps = false;
 }

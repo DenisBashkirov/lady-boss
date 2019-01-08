@@ -16,7 +16,7 @@ class PagesController extends BaseController
 {
     public function __construct()
     {
-        $route_name = Route::getCurrentRoute()->getName();
+        $route_name = Route::getCurrentRoute() ? Route::getCurrentRoute()->getName() : null;
         $this->template = 'frontend.pages.' . $route_name;
 
         $socials = OurContactSocials::orderBy('ordering')->get();
@@ -51,7 +51,9 @@ class PagesController extends BaseController
         $category = Category::where('slug', $slug)->first();
         $this->vars = array_add($this->vars, 'category', $category);
 
-        $this->page_title = $category->name . ' | Салон красоты, спа и массажа Lady boss';
+        $this->page_title = $category->title;
+        $this->meta_description = $category->meta_description;
+        $this->meta_keywords = $category->meta_keywords;
 
         return $this->renderOutput();
     }

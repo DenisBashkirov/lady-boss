@@ -12,7 +12,7 @@ const clean = require('gulp-clean');
 var public_dir = './../../public/';
 var temp_dir = './tmp/';
 
-var serviceSide = 'frontend'; // сторона интерфейса ('frontend' / 'backend')
+var serviceSide = 'backend'; // сторона интерфейса ('frontend' / 'backend')
 
 const config = {
     watch: './**/*.(sass|scss|js)',
@@ -43,7 +43,7 @@ gulp.task('sass', function () {
         .pipe(cleanCSS())
         .pipe(gcmq())
         .pipe(autoprefixer({
-            grid: false,
+            grid: true,
             browsers: ['> 1%'],
             cascade: false
         }))

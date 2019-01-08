@@ -22,15 +22,15 @@
                     <div class="program-card__price-list-item">
                         <p>{{ $item->text }}</p>
                         @if($item->price)
-                            <p>{{ $item->price }}&nbsp;р.</p>
+                            <p><span class="js-digit">{{ $item->price }}</span>&nbsp;р.</p>
                         @endif
                         @if($item->price_range)
                             <div class="program-card__price-range">
                                 @if($item->price_range->min)
-                                    <p>от {{ $item->price_range->min }} р.</p>
+                                    <p>от <span class="js-digit">{{ $item->price_range->min }}</span> р.</p>
                                 @endif
                                 @if($item->price_range->max)
-                                    <p>&nbsp;до {{ $item->price_range->max }} р.</p>
+                                    <p>&nbsp;до <span class="js-digit">{{ $item->price_range->max }}</span> р.</p>
                                 @endif
                             </div>
                         @endif
@@ -47,7 +47,7 @@
                 </p>
             @endif
             <p class="program-card__price">
-                <span>{{ $program->price }} р.</span>
+                <span><span class="js-digit">{{ $program->price }}</span> р.</span>
             </p>
         </div>
     @endif

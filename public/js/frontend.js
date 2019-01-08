@@ -252,7 +252,36 @@ $(document).ready(function () {
 
         target[effect]();
 
-    })
+    });
+
+
+    /*
+    *   РАЗДЕЛЕНИЕ ЦИФР
+     */
+    /**
+     * Format number from 5251.25 to "5 251.25"
+     *
+     * @param num
+     * @returns {string}
+     */
+    function numberFormat(num) {
+        if (!isFinite(num)) {
+            return num;
+        }
+
+        var parts = num.toString().split('.');
+
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+        return parts.join('.');
+    }
+
+    var digits = document.querySelectorAll('.js-digit');
+    for (var i = 0; i < digits.length; i++)
+    {
+        digits[i].innerHTML = numberFormat(digits[i].innerHTML);
+    }
+
 
 
 });

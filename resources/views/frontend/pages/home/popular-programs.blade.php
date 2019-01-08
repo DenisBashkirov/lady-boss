@@ -28,7 +28,7 @@
                     <span class="icon-clock"></span>&nbsp;<span>2:30 минут</span>
                 </p>
                 <p class="program-card__price">
-                   <span>4500&nbsp;р.</span>
+                   <span><span class="js-digit">4500</span>&nbsp;р.</span>
                 </p>
             </div>
         </div>
@@ -57,7 +57,7 @@
                     <span class="icon-clock"></span>&nbsp;<span>2:30 минут</span>
                 </p>
                 <p class="program-card__price">
-                    <span>4500&nbsp;р.</span>
+                    <span><span class="js-digit">4500</span>&nbsp;р.</span>
                 </p>
             </div>
         </div>
@@ -86,7 +86,7 @@
                     <span class="icon-clock"></span>&nbsp;<span>2:30 минут</span>
                 </p>
                 <p class="program-card__price">
-                    <span>4500&nbsp;р.</span>
+                    <span><span class="js-digit">4500</span>&nbsp;р.</span>
                 </p>
             </div>
         </div>

@@ -26,14 +26,12 @@ Route::get('/testimonial/{id}/publish', ['uses'=>'TestimonialsController@publish
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::prefix('admin')->group(function () {
-        Route::get('/', ['uses' => 'Admin\PagesController@index', 'as' => 'admin']);
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', ['uses' => 'Admin\PagesController@index', 'as' => 'dashboard']);
         Route::resource('/testimonials', 'Admin\TestimonialsController');
+        Route::resource('/gallery', 'Admin\GalleryItemsController');
+        Route::resource('/users', 'Admin\UsersController')->middleware('check_rights:manage-users');
+        Route::resource('/categories', 'Admin\CategoriesController')->middleware('check_rights:manage-categories');
     });
 });
-
-
-Route::get('/metrics_disable/', function () {
-
-    return '123';
-});
+Auth::routes();

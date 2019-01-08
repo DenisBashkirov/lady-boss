@@ -16,6 +16,9 @@
 
     @include('frontend.layouts.styles')
 
+    <meta name="description" content="{{ $meta_description }}">
+    <meta name="keywords" content="{{ $meta_keywords }}">
+
     <title>{{ $page_title }}</title>
 
 </head>

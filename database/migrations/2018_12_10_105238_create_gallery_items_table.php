@@ -17,7 +17,7 @@ class CreateGalleryItemsTable extends Migration
         {
             Schema::create('gallery_items', function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('filename')->comment('e.g. "file" - without .ext');
+                $table->string('filename')->unique()->comment('e.g. "file" - without .ext');
                 $table->string('description')->nullable();
                 $table->integer('category_id')->unsigned()->nullable();
                 $table->integer('subcategory_id')->unsigned()->nullable();

@@ -52,6 +52,26 @@
 
 
 /*
+/* NEW GRID
+/*
+
+@mixin grid-position-column($column-start, $column-end: 0)
+  grid-column-start: $column-start
+  @if ($column-end == 0)
+    grid-column-end: #{$column-start + 1}
+  @else
+    grid-column-end: #{$column-end + 1}
+
+
+@mixin grid-position-row($row-start, $row-end: 0)
+  grid-row-start: $row-start
+  @if ($row-end == 0)
+    grid-row-end: #{$row-start + 1}
+  @else
+    grid-row-end: #{$row-end + 1}
+  
+
+/*
 /* GRID
 /*
 

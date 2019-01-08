@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Testimonial;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
+use Route;
 
-class TestimonialsController extends Controller
+class TestimonialsController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,10 @@ class TestimonialsController extends Controller
      */
     public function index()
     {
-        //
+        $testimonials = Testimonial::orderBy('created_at', 'desc')->get();
+        $this->vars = array_add($this->vars,'testimonials', $testimonials);
+
+        return $this->renderOutput();
     }
 
     /**
@@ -80,6 +85,7 @@ class TestimonialsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Testimonial::destroy($id);
+        return redirect()->back();
     }
 }
